@@ -39,7 +39,7 @@ export function ImageBox() {
             {/* <p className="text-center">Click to Choose the Plant Image</p> */}
             <div className="relative w-72 mt-4 flex items-center justify-center aspect-square mx-auto border-2 dark:border-white border-black border-dashed rounded-lg">
               {imageURL ? (
-                <Image src={imageURL} alt="Image" fill />
+                <Image src={imageURL} alt="Image" fill className="rounded-lg" />
               ) : (
                 <div className="flex flex-col gap-2 p-4 justify-center items-center">
                   <LeafSVG />
