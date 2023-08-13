@@ -43,7 +43,7 @@ export function ImageBox() {
               ) : (
                 <div className="flex flex-col gap-2 p-4 justify-center items-center">
                   <LeafSVG />
-                  <p className="text-center">Upload Leaf Image Here</p>
+                  <p className="text-center">Upload Plant Image Here</p>
                 </div>
               )}
               <input
