@@ -4,15 +4,18 @@ import LeafSVG from "@/components/assets/Leaf"
 import { Button } from "@/components/ui/button"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
+import Image from "next/image"
 
 export function ImageBox() {
   // TODO: Add Drag and Drop Functionality
-  const [image, setImage] = useState<FileList | null>(null)
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [imageURL, setImageURL] = useState<string>()
   const { toast } = useToast()
 
   function onImageUpload(e: ChangeEvent<HTMLInputElement>) {
     if (!e.target.files) return
-    setImage(e.target.files)
+    setImageFile(e.target.files[0])
+    setImageURL(URL.createObjectURL(e.target.files[0]))
     console.log(e.target.files)
     toast({
       variant: "success",
@@ -34,10 +37,14 @@ export function ImageBox() {
           <label htmlFor="plant-image" className="cursor-pointer">
             {/* <p className="text-center">Click to Choose the Plant Image</p> */}
             <div className="w-72 mt-4 flex items-center justify-center aspect-square mx-auto border-2 dark:border-white border-black border-dashed rounded-lg">
-              <div className="flex flex-col gap-2 p-4 justify-center items-center">
-                <LeafSVG />
-                <p className="text-center">Upload Leaf Image Here</p>
-              </div>
+              {imageURL ? (
+                <img src={imageURL} alt="Image" />
+              ) : (
+                <div className="flex flex-col gap-2 p-4 justify-center items-center">
+                  <LeafSVG />
+                  <p className="text-center">Upload Leaf Image Here</p>
+                </div>
+              )}
               <input
                 type="file"
                 name="plant-image"
@@ -50,13 +57,13 @@ export function ImageBox() {
             </div>
           </label>
           <div className="mt-4">
-            {image === null ? (
+            {imageFile === null ? (
               <Button disabled className="select-none">
                 Add Image to Proceed
               </Button>
             ) : (
               <div className="flex flex-col justify-center gap-2 items-center">
-                <p>{image[0].name} Uploaded!</p>
+                <p>{imageFile.name} Uploaded!</p>
                 <Button type="submit">Detect Disease</Button>
               </div>
             )}
