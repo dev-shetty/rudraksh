@@ -13,7 +13,7 @@ export function ImageBox() {
   const { toast } = useToast()
 
   function onImageUpload(e: ChangeEvent<HTMLInputElement>) {
-    if (!e.target.files) return
+    if (!e.target.files || !e.target.files[0]) return
     setImageFile(e.target.files[0] ?? null)
     toast({
       variant: "success",
@@ -28,6 +28,8 @@ export function ImageBox() {
     e.preventDefault()
     console.log(e)
   }
+
+  console.log(imageFile)
 
   return (
     <section className="mt-8 md:mt-0">
