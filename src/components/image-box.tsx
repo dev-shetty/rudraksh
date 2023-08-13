@@ -14,14 +14,13 @@ export function ImageBox() {
 
   function onImageUpload(e: ChangeEvent<HTMLInputElement>) {
     if (!e.target.files) return
-    setImageFile(e.target.files[0])
-    setImageURL(URL.createObjectURL(e.target.files[0]))
-    console.log(e.target.files)
+    setImageFile(e.target.files[0] ?? null)
     toast({
       variant: "success",
       title: "Image Uploaded",
       description: `${e.target.files[0].name} Uploaded Successfully`,
     })
+    setImageURL(URL.createObjectURL(e.target.files[0]))
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -36,9 +35,9 @@ export function ImageBox() {
         <div className="flex flex-col items-center">
           <label htmlFor="plant-image" className="cursor-pointer">
             {/* <p className="text-center">Click to Choose the Plant Image</p> */}
-            <div className="w-72 mt-4 flex items-center justify-center aspect-square mx-auto border-2 dark:border-white border-black border-dashed rounded-lg">
+            <div className="relative w-72 mt-4 flex items-center justify-center aspect-square mx-auto border-2 dark:border-white border-black border-dashed rounded-lg">
               {imageURL ? (
-                <img src={imageURL} alt="Image" />
+                <Image src={imageURL} alt="Image" fill />
               ) : (
                 <div className="flex flex-col gap-2 p-4 justify-center items-center">
                   <LeafSVG />
@@ -50,7 +49,7 @@ export function ImageBox() {
                 name="plant-image"
                 id="plant-image"
                 className="hidden"
-                accept="image/*"
+                accept=".png, .jpeg, .jpg"
                 onChange={onImageUpload}
                 required
               />
