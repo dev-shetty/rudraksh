@@ -7,7 +7,7 @@ export default function NotFound() {
     <main className="min-h-screen flex justify-center items-center py-24">
       <Image
         src={Coconut}
-        alt="Coconut"
+        alt="Hanging Coconut Leaves"
         width={500}
         className="absolute top-0 right-0 -z-10"
       />

@@ -80,3 +80,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.gradient-text {
+  @apply bg-gradient-to-r from-green-300 to-green-500 text-transparent bg-clip-text;
+}
+
+/* * {
+  outline: 1px solid red;
+} */
