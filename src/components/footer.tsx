@@ -3,6 +3,7 @@ import Logo from "@/assets/logo.png"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import { siteConfig } from "@/config/site"
 
 export default function Footer() {
   return (
@@ -12,12 +13,12 @@ export default function Footer() {
           <div className="flex gap-2 items-center lg:justify-start justify-center">
             <Image
               src={Logo}
-              alt="Rudraksh Logo"
+              alt={`${siteConfig.name} Logo`}
               width={75}
               quality={100}
               className="-ml-3"
             />
-            <p className="text-2xl font-extrabold">Rudraksh</p>
+            <p className="text-2xl font-extrabold">{siteConfig.name}</p>
           </div>
           <p className="lg:w-2/3 mt-2 text-center lg:text-left max-w-sm lg:max-w-none mx-auto lg:mx-0">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
@@ -43,7 +44,7 @@ export default function Footer() {
         <div className="flex flex-col items-center">
           <div className="flex gap-2 items-center">
             <p className="mt-4 font-bold text-lg text-center px-2">
-              Contribute to Rudraksh
+              Contribute to {siteConfig.name}
             </p>
           </div>
           <ul className="w-2/3 flex flex-col mt-2">
