@@ -2,14 +2,13 @@ import Image from "next/image"
 import ClickPhoto from "@/assets/click-photo.jpg"
 import Processing from "@/assets/processing.jpg"
 import Greenry from "@/assets/happy-greens.jpg"
+import Header from "@/components/header"
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-8">
+    <section className="pt-24 px-8">
       <div>
-        <p className="scroll-m-20 text-center text-3xl md:text-5xl font-semibold tracking-tight transition-colors first:mt-0 gradient-text">
-          How Rudraksh Works?
-        </p>
+        <Header heading="How Rudraksh Works?" />
       </div>
       <div className="grid md:grid-cols-3 gap-8 w-full mt-16">
         <div>
