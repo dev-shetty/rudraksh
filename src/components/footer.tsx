@@ -7,9 +7,9 @@ import { GitHubLogoIcon } from "@radix-ui/react-icons"
 export default function Footer() {
   return (
     <footer className="bg-accent/50">
-      <div className="w-11/12 md:w-2/3 px-4 py-8 mx-auto grid md:grid-cols-3">
-        <div className="flex flex-col md:border-r md:border-r-foreground/50 ">
-          <div className="flex gap-2 items-center md:justify-start justify-center">
+      <div className="w-11/12 md:w-2/3 px-4 py-8 mx-auto grid lg:grid-cols-3">
+        <div className="flex flex-col lg:border-r lg:border-r-foreground/50 ">
+          <div className="flex gap-2 items-center lg:justify-start justify-center">
             <Image
               src={Logo}
               alt="Rudraksh Logo"
@@ -19,14 +19,14 @@ export default function Footer() {
             />
             <p className="text-2xl font-extrabold">Rudraksh</p>
           </div>
-          <p className="md:w-2/3 mt-2 text-center md:text-left">
+          <p className="lg:w-2/3 mt-2 text-center lg:text-left max-w-sm lg:max-w-none mx-auto lg:mx-0">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
             dolore?
           </p>
         </div>
-        <div className="flex flex-col md:border-r md:border-r-foreground/50 items-center">
+        <div className="flex flex-col lg:border-r lg:border-r-foreground/50 items-center">
           <div className="flex gap-2 items-center">
-            <p className="mt-8 md:mt-4 font-bold text-lg">Explore</p>
+            <p className="mt-8 lg:mt-4 font-bold text-lg">Explore</p>
           </div>
           <ul className="w-2/3 flex flex-col mt-2">
             <Button variant="link" asChild>
@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col items-center">
           <div className="flex gap-2 items-center">
-            <p className="mt-4 font-bold text-lg text-center">
+            <p className="mt-4 font-bold text-lg text-center px-2">
               Contribute to Rudraksh
             </p>
           </div>
