@@ -3,12 +3,13 @@ import ClickPhoto from "@/assets/click-photo.jpg"
 import Processing from "@/assets/processing.jpg"
 import Greenry from "@/assets/happy-greens.jpg"
 import Header from "@/components/header"
+import { siteConfig } from "@/config/site"
 
 export default function HowItWorks() {
   return (
     <section className="container pt-24 px-8">
       <div>
-        <Header heading="How Rudraksh Works?" />
+        <Header heading={`How ${siteConfig.name} Works?`} />
       </div>
       <div className="grid md:grid-cols-3 gap-8 w-full mt-16">
         <div>

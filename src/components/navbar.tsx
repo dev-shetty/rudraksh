@@ -1,4 +1,5 @@
 import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { siteConfig } from "@/config/site"
 import Link from "next/link"
 
 export function Navbar() {
@@ -7,7 +8,7 @@ export function Navbar() {
       <div className="flex gap-8 items-center">
         <div>
           <p className="scroll-m-20 text-xl font-semibold">
-            <Link href="/">Rudraksh</Link>
+            <Link href="/">{siteConfig.name}</Link>
           </p>
         </div>
         <ul className="flex gap-4">
