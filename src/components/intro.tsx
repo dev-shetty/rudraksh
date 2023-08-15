@@ -27,7 +27,7 @@ export default function Introduction() {
           fill
           priority
           quality={100}
-          className="block"
+          className="hidden md:block"
         />
       </div>
     </section>
