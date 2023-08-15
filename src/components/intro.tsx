@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import GreenLeaves from "@/assets/green-leaves.jpg"
 import Logo from "@/assets/logo.png"
+import ScrollDown from "@/components/scroll-down"
 
 export default function Introduction() {
   return (
@@ -38,6 +39,7 @@ export default function Introduction() {
           className="hidden md:block"
         />
       </div>
+      <ScrollDown />
     </section>
   )
 }
