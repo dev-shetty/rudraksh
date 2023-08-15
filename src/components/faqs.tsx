@@ -13,7 +13,7 @@ export default function FAQs() {
         <Header heading="Frequently Asked Questions" />
       </div>
       <div className="mt-16 px-8 flex justify-center">
-        <Accordion type="single" collapsible className="w-11/12 md:w-1/2">
+        <Accordion type="single" collapsible className="w-11/12 lg:w-1/2">
           <AccordionItem value="question-1">
             <AccordionTrigger>Question 1?</AccordionTrigger>
             <AccordionContent>Answer 1</AccordionContent>
