@@ -8,7 +8,7 @@ import {
 
 export default function FAQs() {
   return (
-    <section className="min-h-screen py-24">
+    <section className="pt-24 pb-48">
       <div>
         <Header heading="Frequently Asked Questions" />
       </div>

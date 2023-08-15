@@ -6,7 +6,7 @@ import Header from "@/components/header"
 
 export default function HowItWorks() {
   return (
-    <section className="pt-24 px-8">
+    <section className="container pt-24 px-8">
       <div>
         <Header heading="How Rudraksh Works?" />
       </div>
