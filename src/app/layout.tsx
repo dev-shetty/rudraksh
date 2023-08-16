@@ -1,6 +1,6 @@
 import { ThemeProvider } from "@/components/theme-provider"
 import type { Metadata } from "next"
-import { SiteConfig, siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site"
 import { Inter } from "next/font/google"
 import { Navbar } from "@/components/navbar"
 import { Toaster } from "@/components/ui/toaster"
@@ -9,7 +9,6 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-// TODO: Update MetaData
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
