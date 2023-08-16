@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen flex justify-center items-center py-24">
+    <main className="min-h-screen flex justify-center items-center py-24 px-4">
       <Image
         src={Coconut}
         alt="Hanging Coconut Leaves"
