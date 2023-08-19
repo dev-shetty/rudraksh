@@ -1,0 +1,12 @@
+# Ignore venv folder
+venv/
+
+# Ignore other project-specific files and folders
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+*.env
