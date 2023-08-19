@@ -20,9 +20,8 @@ export default function Footer() {
             />
             <p className="text-2xl font-extrabold">{siteConfig.name}</p>
           </div>
-          <p className="lg:w-2/3 mt-2 text-center lg:text-left max-w-sm lg:max-w-none mx-auto lg:mx-0">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            dolore?
+          <p className="lg:w-6/7 mt-2 text-center lg:text-left max-w-sm lg:max-w-none mx-auto lg:mx-0">
+            Blending Tech with Nature&apos;s Essence, Unveiling Plant Health
           </p>
         </div>
         <div className="flex flex-col lg:border-r lg:border-r-foreground/50 items-center">
