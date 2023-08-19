@@ -38,7 +38,7 @@ export default function HowItWorks() {
           </div>
           <div className="py-4 text-center">
             <p>
-            Rudraksh's advanced AI technology kicks into action. The uploaded image is processed by a sophisticated machine learning model to analyze the visual characteristics of the leaf in the image, comparing them to an extensive database.
+            Rudraksh&apos;s advanced AI technology kicks into action. The uploaded image is processed by a sophisticated machine learning model to analyze the visual characteristics of the leaf in the image, comparing them to an extensive database.
             </p>
           </div>
         </div>
