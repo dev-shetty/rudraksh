@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from torch.functional import split
-from src.ml_predict import predict_plant, Network
+from ml_predict import predict_plant, Network
 from pyfcm import FCMNotification
 import base64
 from decouple import config
