@@ -1,5 +1,8 @@
 import { Prediction } from "@/lib/types"
 
+// For development purpose
+import { sampleData } from "@/lib/sample-data"
+
 interface ResultProps {
   data: Prediction
 }
@@ -35,7 +38,7 @@ export default function Result({ data }: ResultProps) {
               </p>
               <div className="grid md:grid-cols-2 gap-4 place-items-center">
                 {prediction.disease.suggestions.map((disease) => (
-                  <div className="mt-4 text-center">
+                  <div className="mt-4 text-center" key={disease.id}>
                     <div className="flex items-center justify-center">
                       <p className="text-2xl font-bold">
                         {disease.name} -{" "}
@@ -45,7 +48,8 @@ export default function Result({ data }: ResultProps) {
                     <p className="my-2">Plants with {disease.name}</p>
                     <div className="flex gap-1">
                       {disease.similar_images.map((image) => (
-                        <div>
+                        <div key={image.id}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={image.url} alt={image.citation} />
                           <p className="my-4">
                             Similarity:{" "}

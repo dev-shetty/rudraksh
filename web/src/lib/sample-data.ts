@@ -20,7 +20,7 @@ export const sampleData = {
     },
     is_healthy: {
       probability: 1.0728836059570312e-6,
-      binary: true,
+      binary: false,
       threshold: 0.63,
     },
     disease: {
