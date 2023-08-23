@@ -34,8 +34,8 @@ Rudraksh provides you with comprehensive insights. It not only identifies the sp
   | Name        |    Link                                                    |
   |-------------|--------------------------------------------------------|
   |Python       |[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://python.org)|
-  |TensorFlow   |[![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)](https://colab.research.google.com)|  
-  |Google Colab |[![GoogleColab](https://img.shields.io/badge/GoogleColab-%23FF6F00.svg?style=for-the-badge&logo=GoogleColab&logoColor=white)](https://www.tensorflow.org)|
+  |TensorFlow   |[![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)](https://www.tensorflow.org)|  
+  |Google Colab |[![GoogleColab](https://img.shields.io/badge/GoogleColab-%23FF6F00.svg?style=for-the-badge&logo=GoogleColab&logoColor=white)](https://colab.research.google.com)|
   |Numpy        |[![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org)|
   |Flask       |[![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/2.3.x)|
   
