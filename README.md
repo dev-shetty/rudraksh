@@ -1,4 +1,4 @@
-# Rudraksh: Plant Disease Diagnosis
+# Rudraksh: Plant Disease Detection
 
 <table>
 <tr>
@@ -11,7 +11,7 @@
 </tr>
 </table>
 
-# Features
+## Features
 - **📸 Image-Based Disease Detection**:   
   Upload an image of your plant and receive instant disease diagnostics.
   
@@ -57,8 +57,26 @@ Rudraksh provides you with comprehensive insights. It not only identifies the sp
   |npm        |[![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)](https://www.npmjs.com)|
 
 
-## Contribute to Rudraksh
-Rudraksh is free and open source, follow our [Contribution Guide](https://github.com/Deveesh-Shetty/rudraksh/blob/master/Contributing.md) to contribute to the project
+## Setup Rudraksh Locally
+Once you have followed the steps mentioned in [Contribution](https://github.com/Deveesh-Shetty/rudraksh/blob/master/Contributing.md) to fork and clone the repository, do the following to setup rudraksh locally on your PC.
+```bash
+cd web
+```
+Install all the dependencies
+```bash
+npm ci
+```
+Add the API key to the `.env` folder as mentioned in `.env.example`
+Get the Plant Id API key from [here](https://web.plant.id/plant-identification-api/)
+```
+NEXT_PUBLIC_PLANT_ID_API_KEY = "Your API Key"
+```
+
+Run the server locally
+```bash
+npm run dev
+```
+That's it you are good to go! Looking forward to your contributions.
 
 ## Contributors
 <a href="https://github.com/Deveesh-Shetty/rudraksh/graphs/contributors">
