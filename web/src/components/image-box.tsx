@@ -5,13 +5,16 @@ import { Button } from "@/components/ui/button"
 import { ChangeEvent, FormEvent, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image"
-import { convertToBase64 } from "@/lib/base64-converter"
 import { useQuery } from "@tanstack/react-query"
 
+interface FormData {
+  images: (string | ArrayBuffer | null)[]
+  similar_images: boolean
+}
+
 export function ImageBox() {
-  // TODO: Add Drag and Drop Functionality
   const [imageFile, setImageFile] = useState<File | null>(null)
-  const [formData, setFormData] = useState<any>([])
+  const [formData, setFormData] = useState<FormData[]>([])
   const [imageURL, setImageURL] = useState<string>()
   const { toast } = useToast()
 
@@ -41,18 +44,15 @@ export function ImageBox() {
   })
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    // TODO: Check how it works in Next13
     e.preventDefault()
     if (!imageFile) return
 
     let reader = new FileReader()
 
+    // Converting Image to Base64 string
     reader.readAsDataURL(imageFile)
 
     reader.onload = function () {
-      //me.modelvalue = reader.result;
-      // console.log("Base64 url: " + reader.result)
-
       const bodyData = {
         images: [reader.result],
         similar_images: true,
@@ -69,7 +69,6 @@ export function ImageBox() {
       <form encType="multipart/form-data" method="post" onSubmit={handleSubmit}>
         <div className="flex flex-col items-center">
           <label htmlFor="plant-image" className="cursor-pointer">
-            {/* <p className="text-center">Click to Choose the Plant Image</p> */}
             <div className="relative w-72 mt-4 flex items-center justify-center aspect-square mx-auto border-2 dark:border-white border-black border-dashed rounded-lg">
               {imageURL ? (
                 <Image src={imageURL} alt="Image" fill className="rounded-lg" />
