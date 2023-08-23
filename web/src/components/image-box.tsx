@@ -11,8 +11,7 @@ import { useQuery } from "@tanstack/react-query"
 export function ImageBox() {
   // TODO: Add Drag and Drop Functionality
   const [imageFile, setImageFile] = useState<File | null>(null)
-  const [result, setResult] = useState()
-  const [formData, setFormData] = useState<any>()
+  const [formData, setFormData] = useState<any>([])
   const [imageURL, setImageURL] = useState<string>()
   const { toast } = useToast()
 
@@ -27,17 +26,17 @@ export function ImageBox() {
     setImageURL(URL.createObjectURL(e.target.files[0]))
   }
 
-  const { isLoading, error, data, refetch } = useQuery({
+  const { isInitialLoading, error, data, refetch } = useQuery({
     queryKey: ["plantData"],
     enabled: false,
     queryFn: () =>
       fetch("https://plant.id/api/v3/identification", {
         method: "POST",
         headers: {
-          "Api-Key": process.env.PLANT_ID_API_KEY!,
+          "Api-Key": process.env.NEXT_PUBLIC_PLANT_ID_API_KEY!,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData[0]),
       }).then((res) => res.json()),
   })
 
@@ -45,23 +44,25 @@ export function ImageBox() {
     // TODO: Check how it works in Next13
     e.preventDefault()
     if (!imageFile) return
-    const base64Image = convertToBase64(imageFile)
-    const bodyData = {
-      images: [base64Image],
-      similar_images: true,
+
+    let reader = new FileReader()
+
+    reader.readAsDataURL(imageFile)
+
+    reader.onload = function () {
+      //me.modelvalue = reader.result;
+      // console.log("Base64 url: " + reader.result)
+
+      const bodyData = {
+        images: [reader.result],
+        similar_images: true,
+      }
+      formData.push(bodyData)
     }
-    setFormData(bodyData)
-    console.log(formData)
 
     await refetch()
-
-    console.log(isLoading)
-    console.log(error)
-    console.log(data)
-    setResult(data)
-
-    console.log(e)
   }
+  console.log(data)
 
   return (
     <section className="mt-8 md:mt-0">
@@ -103,6 +104,7 @@ export function ImageBox() {
           </div>
         </div>
       </form>
+      <div>{isInitialLoading && <p>Loading...</p>}</div>
     </section>
   )
 }
