@@ -15,16 +15,18 @@ export interface Input {
   latitude: null
   longitude: null
   similar_images: boolean
+  health: string
   images: string[]
   datetime: Date
 }
 
 export interface Result {
-  is_plant: IsPlant
-  classification: Classification
+  is_plant: Is
+  is_healthy: Is
+  disease: Disease
 }
 
-export interface Classification {
+export interface Disease {
   suggestions: Suggestion[]
 }
 
@@ -33,6 +35,7 @@ export interface Suggestion {
   name: string
   probability: number
   similar_images: SimilarImage[]
+  redundant?: boolean
   details: Details
 }
 
@@ -44,14 +47,14 @@ export interface Details {
 export interface SimilarImage {
   id: string
   url: string
+  license_name: string
+  license_url: string
+  citation: string
   similarity: number
   url_small: string
-  license_name?: string
-  license_url?: string
-  citation?: string
 }
 
-export interface IsPlant {
+export interface Is {
   probability: number
   binary: boolean
   threshold: number
