@@ -7,6 +7,7 @@ import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image"
 import { useQuery } from "@tanstack/react-query"
 import Result from "@/components/result"
+import { ReloadIcon } from "@radix-ui/react-icons"
 
 interface FormData {
   images: (string | ArrayBuffer | null)[]
@@ -95,18 +96,21 @@ export function ImageBox() {
                 Add Image to Proceed
               </Button>
             ) : (
-              <div className="flex flex-col justify-center gap-2 items-center">
+              <div className="flex flex-col justify-center gap-4 items-center">
                 <p>{imageFile.name} Uploaded!</p>
-                <Button type="submit">Detect Disease</Button>
+                {/* Disable the button when the process is running or already previous data is there */}
+                <Button type="submit" disabled={isInitialLoading || data}>
+                  {isInitialLoading && (
+                    <ReloadIcon className="mr-2 h-4 w-4 animate-spin" />
+                  )}
+                  Detect Disease
+                </Button>
               </div>
             )}
           </div>
         </div>
       </form>
-      <div>
-        {isInitialLoading && <p className="my-4 text-center">Loading...</p>}
-      </div>
-      {!data ? <Result data={data} /> : ""}
+      {data ? <Result data={data} /> : ""}
     </section>
   )
 }

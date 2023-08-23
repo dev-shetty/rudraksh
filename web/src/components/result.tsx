@@ -1,5 +1,3 @@
-import Header from "@/components/header"
-import { sampleData } from "@/lib/sample-data"
 import { Prediction } from "@/lib/types"
 
 interface ResultProps {
@@ -7,15 +5,16 @@ interface ResultProps {
 }
 
 export default function Result({ data }: ResultProps) {
+  const prediction = data.result
   return (
     <div className="w-screen mt-8">
       {/* If the image is not a plant just show one line */}
-      {sampleData.result.is_plant.binary ? (
+      {prediction.is_plant.binary ? (
         <div className="p-8 bg-secondary">
           <p className="text-center text-3xl md:text-4xl">
             Plant is{"  "}
             <span className="font-bold">
-              {sampleData.result.is_healthy.binary ? (
+              {prediction.is_healthy.binary ? (
                 <span className="gradient-text">Healthy</span>
               ) : (
                 <span className="text-red-500">Unhealthy</span>
@@ -23,19 +22,19 @@ export default function Result({ data }: ResultProps) {
             </span>
           </p>
           {/* If the plant is healthy display a motivated message :) */}
-          {sampleData.result.is_healthy.binary && (
+          {prediction.is_healthy.binary && (
             <p className="text-center mt-4 text-lg">
               Your plant is happy, you are truly a nature lover!
             </p>
           )}
           {/* If the plant is unhealthy then only display the diseases */}
-          {!sampleData.result.is_healthy.binary && (
+          {!prediction.is_healthy.binary && (
             <div>
               <p className="text-center text-lg md:text-2xl mt-8">
                 Potential Diseases
               </p>
               <div className="grid md:grid-cols-2 gap-4 place-items-center">
-                {sampleData.result.disease.suggestions.map((disease) => (
+                {prediction.disease.suggestions.map((disease) => (
                   <div className="mt-4 text-center">
                     <div className="flex items-center justify-center">
                       <p className="text-2xl font-bold">
