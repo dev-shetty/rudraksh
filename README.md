@@ -22,11 +22,9 @@
   Utilizing cutting-edge machine learning for accurate and rapid disease identification.
 
 # How To Use
-> ### 1 ) Visit the Rudraksh platform.
->
-> ### 2 ) Upload an image of your plant.  
->
-> ### 3 ) Wait for the diagnostic results and read about potential treatments.
+### 1 ) Visit the Rudraksh platform.
+### 2 ) Upload an image of your plant.  
+### 3 ) Wait for the diagnostic results and read about potential treatments.
             
 # Technologies Behind Rudraksh
 - **Disease Prediction**: 
