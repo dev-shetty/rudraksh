@@ -36,7 +36,13 @@ export default function Result({ data }: ResultProps) {
               <p className="text-center text-lg md:text-2xl mt-8">
                 Potential Diseases
               </p>
-              <div className="grid md:grid-cols-2 gap-4 place-items-center">
+              <div
+                className={`${
+                  prediction.disease.suggestions.length === 1
+                    ? ""
+                    : "md:grid-cols-2"
+                } grid gap-6 place-items-center`}
+              >
                 {prediction.disease.suggestions.map((disease) => (
                   <div className="mt-4 text-center" key={disease.id}>
                     <div className="flex items-center justify-center">
@@ -46,11 +52,15 @@ export default function Result({ data }: ResultProps) {
                       </p>
                     </div>
                     <p className="my-2">Plants with {disease.name}</p>
-                    <div className="flex gap-1">
+                    <div className="flex gap-2">
                       {disease.similar_images.map((image) => (
                         <div key={image.id}>
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={image.url} alt={image.citation} />
+                          <img
+                            src={image.url}
+                            alt={image.citation}
+                            className="rounded-md"
+                          />
                           <p className="my-4">
                             Similarity:{" "}
                             <span className="font-bold">
