@@ -6,6 +6,7 @@ import { ChangeEvent, FormEvent, useState } from "react"
 import { useToast } from "@/components/ui/use-toast"
 import Image from "next/image"
 import { useQuery } from "@tanstack/react-query"
+import Result from "@/components/result"
 
 interface FormData {
   images: (string | ArrayBuffer | null)[]
@@ -64,7 +65,7 @@ export function ImageBox() {
   }
 
   return (
-    <section className="mt-8 md:mt-0">
+    <section className="mt-8 md:mt-4">
       <form encType="multipart/form-data" method="post" onSubmit={handleSubmit}>
         <div className="flex flex-col items-center">
           <label htmlFor="plant-image" className="cursor-pointer">
@@ -102,7 +103,10 @@ export function ImageBox() {
           </div>
         </div>
       </form>
-      <div>{isInitialLoading && <p>Loading...</p>}</div>
+      <div>
+        {isInitialLoading && <p className="my-4 text-center">Loading...</p>}
+      </div>
+      {!data ? <Result data={data} /> : ""}
     </section>
   )
 }
