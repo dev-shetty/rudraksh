@@ -23,7 +23,10 @@ export default function HowItWorks() {
           </div>
           <div className="py-4 text-center">
             <p>
-            Start by capturing a clear image of a plant leaf that might be showing signs of disease. Ensure that the image is sharp and well-lit. Easily upload the image to the Rudraksh platform using our user-friendly interface.
+              Start by capturing a clear image of a plant leaf that might be
+              showing signs of disease. Ensure that the image is sharp and
+              well-lit. Easily upload the image to the Rudraksh platform using
+              our user-friendly interface.
             </p>
           </div>
         </div>
@@ -38,7 +41,10 @@ export default function HowItWorks() {
           </div>
           <div className="py-4 text-center">
             <p>
-            Rudraksh&apos;s advanced AI technology kicks into action. The uploaded image is processed by a sophisticated machine learning model to analyze the visual characteristics of the leaf in the image, comparing them to an extensive database.
+              Rudraksh&apos;s advanced AI technology kicks into action. The
+              uploaded image is processed by a sophisticated machine learning
+              model to analyze the visual characteristics of the leaf in the
+              image, comparing them to an extensive database.
             </p>
           </div>
         </div>
@@ -53,7 +59,10 @@ export default function HowItWorks() {
           </div>
           <div className="py-4 text-center">
             <p>
-            Rudraksh provides you with comprehensive insights. It not only identifies the specific disease affecting your plant but also offers a detailed description of the plant, the disease itself, and recommends effective remedies.
+              Rudraksh provides you with comprehensive insights. It not only
+              identifies the specific disease affecting your plant but also
+              offers a detailed description of the plant, the disease itself,
+              and recommends effective remedies.
             </p>
           </div>
         </div>

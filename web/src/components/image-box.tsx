@@ -35,14 +35,17 @@ export function ImageBox() {
     queryKey: ["plantData"],
     enabled: false,
     queryFn: () =>
-      fetch("https://plant.id/api/v3/health_assessment", {
-        method: "POST",
-        headers: {
-          "Api-Key": process.env.NEXT_PUBLIC_PLANT_ID_API_KEY!,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData[0]),
-      }).then((res) => res.json()),
+      fetch(
+        "https://plant.id/api/v3/health_assessment?language=en&details=local_name,description,url,treatment,classification,common_names,cause",
+        {
+          method: "POST",
+          headers: {
+            "Api-Key": process.env.NEXT_PUBLIC_PLANT_ID_API_KEY!,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData[0]),
+        }
+      ).then((res) => res.json()),
   })
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {

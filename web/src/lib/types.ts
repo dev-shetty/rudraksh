@@ -35,23 +35,35 @@ export interface Suggestion {
   name: string
   probability: number
   similar_images: SimilarImage[]
-  redundant?: boolean
   details: Details
 }
 
 export interface Details {
+  local_name: string
+  description: string
+  url: string
+  treatment: Treatment
+  classification: string[]
+  common_names: null
+  cause: null
   language: string
   entity_id: string
+}
+
+export interface Treatment {
+  chemical: string[]
+  biological: string[]
+  prevention: string[]
 }
 
 export interface SimilarImage {
   id: string
   url: string
-  license_name: string
-  license_url: string
-  citation: string
   similarity: number
   url_small: string
+  license_name?: string
+  license_url?: string
+  citation?: string
 }
 
 export interface Is {
