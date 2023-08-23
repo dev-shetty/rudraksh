@@ -33,7 +33,7 @@ export function ImageBox() {
     queryKey: ["plantData"],
     enabled: false,
     queryFn: () =>
-      fetch("https://plant.id/api/v3/identification", {
+      fetch("https://plant.id/api/v3/health_assessment", {
         method: "POST",
         headers: {
           "Api-Key": process.env.NEXT_PUBLIC_PLANT_ID_API_KEY!,
@@ -62,7 +62,6 @@ export function ImageBox() {
 
     await refetch()
   }
-  console.log(data)
 
   return (
     <section className="mt-8 md:mt-0">
