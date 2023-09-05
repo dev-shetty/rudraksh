@@ -21,7 +21,7 @@ export default function FAQs() {
           </AccordionItem>
           <AccordionItem value="question-2">
             <AccordionTrigger>What kind of plants does Rudraksh cater to?</AccordionTrigger>
-            <AccordionContent>Rudraksh is currently designed to assist for tomato, potato and pepper plants. Its AI can detect diseases in various types of leaves, helping both home gardeners and farmers. </AccordionContent>
+            <AccordionContent>Rudraksh is designed to assist a wide range of plants, from ornamentals to crops. Its AI can detect diseases in various types of leaves, helping both home gardeners and farmers. </AccordionContent>
           </AccordionItem>
           <AccordionItem value="question-3">
             <AccordionTrigger>Is Rudraksh&apos;s AI capable of recognizing multiple diseases?</AccordionTrigger>
